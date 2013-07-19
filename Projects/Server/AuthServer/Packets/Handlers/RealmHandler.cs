@@ -31,13 +31,15 @@ namespace AuthServer.Packets.Handlers
         {
             var realmList = new Packet(ServerMessage.RealmList);
 
-            realmList.Write<uint>(1);       // Count
-            realmList.Write<uint>(1337);    // Id
-            realmList.Write("Arctium");     // Name
-            realmList.Write<uint>(0);       // Flags
-            realmList.Write<uint>(12);      // RealmStatus
+            realmList.Write<int>(1);       // Count
 
-            realmList.Write<uint>(0);       // RealmMessageCount
+            realmList.Write<int>(1);       // Id
+            realmList.Write("Arctium");    // Name
+            realmList.Write<int>(0);       // Flags
+            realmList.Write<int>(12);      // RealmStatus
+
+            realmList.Write<int>(0);       // RealmMessageCount
+            realmList.Write("");
 
             session.Send(realmList);
         }

@@ -36,8 +36,6 @@ namespace WorldServer.Packets.Handlers
         {
             var sHello = new Packet(ServerMessage.SHello);
 
-            // Some parts are workarounds due problems
-            // with the Packet.Write method...
             sHello.Write<int>(6182);                // BuildNumber
             sHello.Write<int>(0);
             sHello.Write<int>(0);
@@ -45,8 +43,8 @@ namespace WorldServer.Packets.Handlers
             sHello.Write<long>(0);
             sHello.Write<int>(0);
             sHello.Write<int>(0);
-            sHello.Write<uint>(0xA82B20A8, false);  // NetworkMessageCRC
-            sHello.Write<uint>(0);
+            sHello.WriteDefault<uint>(0xA82B20A8);  // NetworkMessageCRC
+            sHello.Write<int>(0);
             sHello.Write<long>(0);
 
             session.Send(sHello);
