@@ -23,7 +23,7 @@ namespace Framework.Constans
         State2                 = 0x001,
         RequestWorldEnter      = 0x447,
         Ping                   = 0x052,  // Not used
-        RequestCharacterCreate = 0x05C,  // Not used
+        RequestCharacterCreate = 0x15C,  // Not used
         MultiPacket            = 0x1D0,
         ChatMessage            = 0x11E,
         AuthRequest            = 0x2EC,

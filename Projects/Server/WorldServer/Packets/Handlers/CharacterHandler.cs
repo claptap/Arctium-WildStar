@@ -34,11 +34,30 @@ namespace WorldServer.Packets.Handlers
         /// </summary>
         static void SendCharacterList(WorldSession session)
         {
-            var characterList = new Packet(ServerMessage.CharacterList, true);
+            var characterList = new Packet(ServerMessage.CharacterList);
 
-            // Hehe coming soon :)
+            // Empty character list
+            characterList.Write<int>(0, 0, false);  // Count
+            characterList.Write<int>(1);            // AdditionalCount (Allowed char creations)
+            characterList.Write<int>(0, 0, false);
 
             session.Send(characterList);
+        }
+
+        [Message(ClientMessage.RequestCharacterCreate, "6182")]
+        public static void OnRequestCharacterCreate(Packet packet, WorldSession session)
+        {
+            
+
+            SendCharacterCreate(session);
+        }
+
+        /// <summary>
+        /// Answer for OnRequestCharacterCreate
+        /// </summary>
+        static void SendCharacterCreate(WorldSession session)
+        {
+            
         }
     }
 }

@@ -76,8 +76,8 @@ namespace Framework.Network.Packets
             }
             else
             {
-                Write<uint>(4, true, 24);
-                Write<ushort>((ushort)message, true, 11);
+                Write<uint>(4, 24);
+                Write<ushort>((ushort)message, 11);
             }
         }
 
@@ -256,7 +256,7 @@ namespace Framework.Network.Packets
             }
         }
 
-        public void Write<T>(T value, bool bla = true, int bits = 0)
+        public void Write<T>(T value, int bits = 0, bool cutLastByte = true)
         {
             var writer = stream as BinaryWriter;
 
@@ -284,13 +284,13 @@ namespace Framework.Network.Packets
                 case "UInt16":
                     val = Convert.ToUInt16(value);
 
-                    WriteBits<ushort>(val, 0x10);
+                    WriteBits<ushort>(val, 0x10, cutLastByte);
                     break;
                 case "Int32":
                 case "UInt32":
                     val = Convert.ToUInt32(value);
 
-                    WriteBits<uint>(val, 0x20);
+                    WriteBits<uint>(val, 0x20, cutLastByte);
                     break;
                 case "Single":
                     WriteDefault<T>(value);

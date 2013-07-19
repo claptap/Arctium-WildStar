@@ -62,18 +62,18 @@ namespace AuthServer.Packets.Handlers
         /// </summary>
         static void SendConnectToRealm(AuthSession session, uint realmId)
         {
-            var realmList = new Packet(ServerMessage.ConnectToRealm);
+            var connectToRealm = new Packet(ServerMessage.ConnectToRealm);
 
-            realmList.Write<byte>(1);      // IP Part 4
-            realmList.Write<byte>(0);      // IP Part 3
-            realmList.Write<byte>(0);      // IP Part 2
-            realmList.Write<byte>(127);    // IP Part 1
-            realmList.Write<uint>(24000);  // Port
-            realmList.Write<ulong>(0);
-            realmList.Write<ulong>(0);
-            realmList.Write<uint>(1);      // AcccountId
+            connectToRealm.Write<byte>(1);      // IP Part 4
+            connectToRealm.Write<byte>(0);      // IP Part 3
+            connectToRealm.Write<byte>(0);      // IP Part 2
+            connectToRealm.Write<byte>(127);    // IP Part 1
+            connectToRealm.Write<uint>(24000);  // Port
+            connectToRealm.Write<ulong>(0);
+            connectToRealm.Write<ulong>(0);
+            connectToRealm.Write<uint>(1);      // AcccountId
 
-            session.Send(realmList);
+            session.Send(connectToRealm);
         }
     }
 }
