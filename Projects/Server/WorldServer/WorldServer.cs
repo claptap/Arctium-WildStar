@@ -17,7 +17,7 @@
 
 using Framework.Logging;
 using WorldServer.Network;
-using WorldServer.Packets.Handlers;
+using WorldServer.Packets;
 using WorldServer.World.Chat.Commands.Manager;
 
 namespace WorldServer

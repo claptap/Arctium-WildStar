@@ -16,7 +16,7 @@
  */
 
 using AuthServer.Network;
-using AuthServer.Packets.Handlers;
+using AuthServer.Packets;
 using Framework.Logging;
 
 namespace AuthServer

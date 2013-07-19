@@ -39,11 +39,10 @@
     <Compile Include="Packets\Handlers\ChatHandler.cs" />
     <Compile Include="Packets\Handlers\MiscHandler.cs" />
     <Compile Include="Packets\Handlers\ObjectHandler.cs" />
+    <Compile Include="Packets\PacketManager.cs" />
     <Compile Include="WorldServer.cs" />
     <Compile Include="Network\WorldSession.cs" />
     <Compile Include="Network\Server.cs" />
-    <Compile Include="PackerArrays.cs" />
-    <Compile Include="Packets\Handlers\PacketManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="World\Chat\Commands\Manager\ChatCommandAttribute.cs" />
     <Compile Include="World\Chat\Commands\Manager\ChatCommandManager.cs" />
