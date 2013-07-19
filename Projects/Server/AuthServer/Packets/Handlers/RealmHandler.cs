@@ -49,7 +49,7 @@ namespace AuthServer.Packets.Handlers
         {
             var realmId = packet.Read<uint>();
 
-            if (realmId == 1337)
+            if (realmId == 1)
             {
                 Log.Message(LogType.Normal, "Selected Realm: {0}", "Three Wood");
 
